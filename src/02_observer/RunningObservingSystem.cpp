@@ -31,6 +31,9 @@ void RunningObservingSystem::Do() {
 
 void RunningObservingSystem::OnExit() {
   concrete_observable_.OnExitObservable();
+  if (concrete_observable_worker_.joinable()) {
+    concrete_observable_worker_.join();
+  }
   if (timer_to_keep_io_context_alive_) {
     timer_to_keep_io_context_alive_->cancel();
     timer_to_keep_io_context_alive_.reset();
