@@ -8,7 +8,7 @@ ConcreteObserver::ConcreteObserver(ConcreteObservable& concrete_observable)
 {
 }
 
-ConcreteObserver::~ConcreteObserver() noexcept = default;
+ConcreteObserver::~ConcreteObserver() = default;
 
 void ConcreteObserver::Update() {
   PrintData();

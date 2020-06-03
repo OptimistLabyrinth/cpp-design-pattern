@@ -9,7 +9,7 @@ namespace observer_pattern {
 class ConcreteObserver : public Observer {
 public:
   explicit ConcreteObserver(ConcreteObservable& concrete_observable);
-  ~ConcreteObserver() noexcept override;
+  ~ConcreteObserver() override;
 
   void Update() override;
   void PrintData();
